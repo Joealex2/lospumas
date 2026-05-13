@@ -1,0 +1,569 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+:root {
+    --bg-dark: #120c0c;       /* Fondo casi negro */
+    --bg-card: #1a1515;       /* Fondo de tarjetas */
+    --red: #d32f2f;           /* Rojo principal */
+    --red-hover: #b71c1c;
+    --text-white: #ffffff;
+    --text-gray: #b0b0b0;
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Barlow Condensed', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- BARRA DE NAVEGACIÓN --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: rgba(18, 12, 12, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-size: 2rem;
+}
+
+.nav-logo span {
+    color: var(--red);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-white);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--red);
+}
+
+.nav-btn-main {
+    background-color: var(--red);
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* --- ETIQUETAS DE SECCIÓN (BADGES) --- */
+.badge-section {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    background: var(--red);
+    padding: 0.3rem 1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 0 0 8px 8px;
+    z-index: 10;
+}
+/* --- ESTILOS DEL CARRUSEL --- */
+.carousel {
+    width: 100%;
+    min-width: 450px; 
+    position: relative;
+    border: 3px solid var(--red);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background: #221a1a;
+}
+
+.carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth;
+    scrollbar-width: none; 
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none; 
+}
+
+.carousel-item {
+    min-width: 100%; 
+    height: 370px;
+    scroll-snap-align: start;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.carousel-hint {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(211, 47, 47, 0.8);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    pointer-events: none;
+}
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(211, 47, 47, 0.7);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0; /* Ocultas por defecto */
+}
+
+.carousel:hover .carousel-btn {
+    opacity: 1;
+}
+
+.carousel-btn:hover {
+    background: var(--red);
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+section {
+    position: relative;
+    padding: 5rem 10%;
+}
+
+.filiales-about-container {
+    margin-top: 120px; 
+    width: 100%;
+}
+
+
+.filiales-title {
+    color: #ffd700; 
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px; 
+    text-align: center;
+}
+
+.filiales-logos-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /
+    flex-wrap: wrap;
+}
+
+
+.filial-item-box {
+    flex: 0 1 110px; 
+}
+
+.filial-item-box img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(0%) !important;
+    opacity: 1 !important;          
+    transition: all 0.3s ease;
+}
+
+
+.filial-item-box:hover img {
+    transform: scale(1.08); /* Pequeño zoom */
+}
+/* --- SECCIÓN HERO --- */
+.hero-section {
+    height: 930px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/img1.jpg') center/cover;
+}
+
+.hero-top-text {
+    color: #e6a700; /* Dorado para el texto pequeño superior */
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section h1 {
+    font-size: 6rem;
+    line-height: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.text-accent {
+    color: var(--red);
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-primary { background: var(--red); color: white; }
+.btn-secondary { border: 2px solid white; color: white; }
+.btn-primary:hover { background: var(--red-hover); }
+
+/* --- SECCIÓN NOSOTROS / INFRA --- */
+.container-flex {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.image-placeholder {
+    width: 100%;
+    min-width: 450px;
+    height: 350px;
+    border: 3px solid var(--red);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #221a1a;
+}
+/* El contenedor principal */
+.container-flex {
+    display: flex;
+    gap: 40px; 
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Ajusta según el ancho de tu web */
+    margin: 0 auto;
+}
+
+/* Columna de Medios (Foto + Video) */
+.about-media {
+    flex: 0 0 55%; /* No se encoge, no crece, se queda en 55% del ancho */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Columna de Texto */
+.about-text {
+    flex: 0 0 40%; /* Se queda fija en el 40% del ancho */
+    min-width: 300px; /* Evita que se haga un tallarín */
+}
+
+/* El envoltorio del video */
+.video-wrapper-nosotros {
+    width: 100%;
+    border: 2px solid #d32f2f;
+    border-radius: 12px;
+    overflow: hidden;
+    line-height: 0;
+    background: #000;
+}
+
+/* EL VIDEO: Aquí está la clave para que no se deforme */
+.video-wrapper-nosotros video {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9; /* Reserva el espacio exacto */
+    display: block;
+    object-fit: cover;
+}
+
+/* Ajuste para que en celulares no se vea mal */
+@media (max-width: 768px) {
+    .container-flex {
+        flex-direction: column;
+    }
+    .about-media, .about-text {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
+
+.red-line {
+    width: 60px;
+    height: 4px;
+    background: var(--red);
+    margin: 1rem 0;
+}
+
+.about-tags {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+/* Contenedor de las etiquetas de valores */
+.about-tags {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.about-tags span {
+    border: 1px solid #d32f2f;
+    padding: 5px 15px;
+    color: #d32f2f;
+    font-weight: bold;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* Sección de Filiales (Ahora debajo de los tags) */
+.filiales-container {
+    margin-top: 40px; /* Espacio extra para separar de los valores */
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil divisoria */
+}
+
+.filiales-title {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #e6a700; 
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.filiales-logos {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+}
+
+.filial-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.filial-item img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+
+.about-tags span {
+    border: 1px solid var(--red);
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    color: var(--red);
+    font-weight: bold;
+}
+
+/* --- GRIDS (Entrenadores y Programas) --- */
+.coaches-grid, .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.coach-card, .program-card {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #332b2b;
+}
+
+.coach-img-placeholder {
+    height: 250px;
+    background: #2a2222;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+.coach-img-container {
+    width: 100%;
+    height: 350px; 
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.coach-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto evita que la foto se estire */
+    object-position: top;
+}
+
+/* --- TABLAS --- */
+.tables-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: var(--bg-card);
+}
+
+th, td {
+    padding: 1rem;
+    border-bottom: 1px solid #332b2b;
+    text-align: left;
+}
+
+th { background-color: var(--red); color: white; }
+
+/* --- FORMULARIO --- */
+.main-form {
+    background: var(--bg-card);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+input, select {
+    flex: 1;
+    padding: 1rem;
+    background: #2a2222;
+    border: 1px solid #443a3a;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--red);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    padding: 4rem 10% 2rem;
+    background: #0a0808;
+    border-top: 1px solid #332b2b;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.footer-socials a {
+    color: var(--red);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+/* --- CONFIGURACIÓN DE UBICACIÓN FIJA (LAPTOP) --- */
+
+.location-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 30px;
+    margin-top: 2rem;
+    width: 100%; /* Se mantiene al ancho del contenedor padre */
+}
+
+/* Columna de información a la izquierda */
+.location-cards {
+    width: 450px; /* Ancho fijo para el texto */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.loc-card {
+    background: #1a1515; /* Color oscuro de fondo */
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #d32f2f; /* Detalle en rojo */
+}
+
+.loc-card h3 {
+    margin-bottom: 10px;
+    color: #d32f2f;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+}
+
+.loc-card p {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin: 0;
+}
+
+.map-wrap {
+    flex-grow: 1; 
+    height: 450px; 
+    border: 3px solid #d32f2f;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.map-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
