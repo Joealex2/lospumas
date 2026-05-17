@@ -458,13 +458,69 @@ th, td {
 
 th { background-color: var(--red); color: white; }
 
-/* --- FORMULARIO --- */
+/* --- FORMULARIO MEJORADO --- */
 .main-form {
-    background: var(--bg-card);
-    padding: 3rem;
-    border-radius: var(--border-radius);
+    background: #1a1515; /* var(--bg-card) */
+    padding: 48px;
+    border-radius: 12px;
     max-width: 900px;
     margin: 0 auto;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4); /* Sombra para darle profundidad */
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+input, select {
+    flex: 1;
+    padding: 16px;
+    background: #2a2222;
+    border: 1px solid #443a3a;
+    color: #ffffff;
+    border-radius: 5px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px; /* Texto más legible */
+    transition: all 0.3s ease;
+}
+
+/* Efecto visual cuando el usuario escribe en los campos */
+input:focus, select:focus {
+    outline: none;
+    border-color: #d32f2f; /* var(--red) */
+    box-shadow: 0px 0px 8px rgba(211, 47, 47, 0.4);
+}
+
+/* Opciones del select en modo oscuro */
+select option {
+    background: #1a1515;
+    color: #ffffff;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 20px;
+    background: #d32f2f; /* var(--red) */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.1s ease;
+    margin-top: 8px;
+}
+
+.btn-submit:hover {
+    background: #b71c1c; /* var(--red-hover) */
+}
+
+.btn-submit:active {
+    transform: scale(0.98); /* Pequeño efecto de clic */
 }
 
 .form-row {
@@ -494,9 +550,9 @@ input, select {
     font-size: 1.2rem;
 }
 
-/* --- FOOTER --- */
+/* --- FOOTER MEJORADO --- */
 footer {
-    padding: 4rem 10% 2rem;
+    padding: 60px 40px 30px;
     background: #0a0808;
     border-top: 1px solid #332b2b;
 }
@@ -504,13 +560,81 @@ footer {
 .footer-top {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 3rem;
+    align-items: center;
+    margin-bottom: 40px;
 }
 
-.footer-socials a {
-    color: var(--red);
+/* Marca y Sello */
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-seal {
+    width: 80px;  
+    height: 80px;
+    object-fit: contain;
+}
+
+.footer-logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+.footer-logo-text span {
+    color: #d32f2f;
+}
+
+/* Información de Contacto e Iconos */
+.footer-contact-info p {
+    font-size: 18px;
+    color: #b0b0b0;
+    margin-bottom: 12px;
+    text-align: right;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: #1a1515;
+    border: 1px solid #332b2b;
+    border-radius: 22px; 
+    color: #ffffff;
     text-decoration: none;
-    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+}
+
+/* Efecto Hover en los iconos */
+.social-icon:hover {
+    background: #d32f2f;
+    border-color: #d32f2f;
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #2a2222;
+    padding-top: 20px;
+    font-size: 16px;
+    color: #b0b0b0;
 }
 
 /* --- CONFIGURACIÓN DE UBICACIÓN FIJA (LAPTOP) --- */

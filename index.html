@@ -23,7 +23,6 @@
     <main>
         <section id="inicio" class="hero-section">
             <h1>FORJA TU <br><span class="text-accent">ESPÍRITU</span> <br> CAMPEÓN</h1>
-            <p class="hero-subtext">Taekwondo de alto nivel en el Valle de los Chillos</p>
             <div class="hero-cta">
                 <a href="#contacto" class="btn-primary">ÚNETE AL CLUB</a>
                 <a href="#programas" class="btn-secondary">VER PROGRAMAS</a>
@@ -68,10 +67,10 @@
 
         <div class="about-text">
             <p class="overline">QUIÉNES SOMOS</p>
-            <h2>CDFE LOS PUMAS GOG</h2>
+            <h2>Club Deportivo Formativo Especializado LOS PUMAS </h2>
             <div class="red-line"></div>
             <div class="text-content">
-    <p><strong>CDFE Los Pumas GOG</strong> es una institución con más de 20 años de trayectoria, dedicada a la formación integral a través del Taekwondo. Bajo la dirección del <strong>Lic. Galo Gavilánez</strong> y el <strong>Prof. Joe Gavilánez</strong>, forjamos atletas con valores sólidos como el respeto, la perseverancia y la disciplina.</p>
+    <p><strong>El Club Deportivo Formativo Especializado Los Pumas </strong> es una institución con más de 20 años de trayectoria, dedicada a la formación integral a través del Taekwondo. Bajo la dirección del <strong>Lic. Galo Gavilánez</strong> y el <strong>Prof. Joe Gavilánez</strong>, forjamos atletas con valores sólidos como el respeto, la perseverancia y la disciplina.</p>
 
     <p>Nuestros programas están diseñados para todas las edades y niveles, desde la iniciación infantil hasta el alto rendimiento competitivo, brindando un ambiente seguro y motivador para superar retos diarios.</p>
 
@@ -85,7 +84,7 @@
             <img src="img/fetkd.png" alt="Logo Federación Ecuatoriana de Taekwondo">
         </div>
         <div class="filial-item-box">
-            <img src="img/pic.png" alt="Logo Taekwondo Pichincha">
+            <img src="img/pic (2).png" alt="Logo Taekwondo Pichincha">
         </div>
         <div class="filial-item-box">
             <img src="img/rum.jpg" alt="Logo Club Rumiñahui">
@@ -209,39 +208,51 @@
             <div class="badge-section">FORMULARIO</div>
             <p class="overline">CONTÁCTANOS</p>
             <h2>INSCRÍBETE HOY</h2>
-            <form class="main-form">
-                <div class="form-row">
-                    <input type="text" placeholder="Nombre completo">
-                    <input type="email" placeholder="Correo electrónico">
-                </div>
-                <div class="form-row">
-                    <input type="tel" placeholder="Teléfono / WhatsApp">
-                    <select>
-                        <option>Selecciona un programa</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-submit">🥋 QUIERO MI CLASE DE PRUEBA GRATIS</button>
-            </form>
+            <form class="main-form" action="procesar_formulario.php" method="POST">
+    <div class="form-row">
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
+        <input type="email" name="correo" placeholder="Correo electrónico" required>
+    </div>
+    <div class="form-row">
+        <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" required>
+        <select name="programa" required>
+            <option value="" disabled selected>Selecciona un programa</option>
+            <option value="Infantil">Infantil (5 hasta 12 años)</option>
+            <option value="Jovenes y Adultos">Jóvenes y Adultos (13 años en adelante)</option>
+        </select>
+    </div>
+    <button type="submit" class="btn-submit">🥋 QUIERO MI CLASE DE PRUEBA GRATIS</button>
+</form>
         </section>
     </main>
 
     <footer>
-        <div class="footer-top">
-            <div class="footer-logo">LOS <span>PUMAS</span> GOG</div>
-            <div class="footer-contact-info">
-                <p>Redes Sociales:</p>
-                <div class="footer-socials">
-                    <a href="https://www.facebook.com/LosPumasTkd1999">Facebook</a> · 
-                    <a href="https://www.instagram.com/lospumas_tkd/">Instagram</a> ·
-                     <a href="https://wa.me/593984302599">WhatsApp</a>
-                </div>
+    <div class="footer-top">
+        <div class="footer-brand">
+            <img src="img/img2.png" alt="Sello Club Los Pumas" class="footer-seal">
+            <div class="footer-logo-text">LOS <span>PUMAS</span></div>
+        </div>
+
+        <div class="footer-contact-info">
+            <p>Síguenos en nuestras redes:</p>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/LosPumasTkd1999" target="_blank" class="social-icon" title="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+                <a href="https://www.instagram.com/lospumas_tkd/" target="_blank" class="social-icon" title="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="https://wa.me/593984302599" target="_blank" class="social-icon" title="WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                </a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>Club Deportivo Formativo - Valle de los Chillos, Quito.</p>
-            <p>© 2026 Club Los Pumas </p>
-        </div>
-    </footer>
+    </div>
+    <div class="footer-bottom">
+        <p>Club Deportivo Formativo - Valle de los Chillos, Quito.</p>
+        <p>© 2026 Club Los Pumas</p>
+    </div>
+</footer>
 
 </body>
 </html>
