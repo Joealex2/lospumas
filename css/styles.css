@@ -89,10 +89,11 @@ h1, h2, h3, .nav-logo {
     border-radius: 0 0 8px 8px;
     z-index: 10;
 }
+
 /* --- ESTILOS DEL CARRUSEL --- */
 .carousel {
     width: 100%;
-    min-width: 450px; 
+    min-width: 100%; /* Ajustado para responsividad */
     position: relative;
     border: 3px solid var(--red);
     border-radius: var(--border-radius);
@@ -135,6 +136,7 @@ h1, h2, h3, .nav-logo {
     font-size: 0.8rem;
     pointer-events: none;
 }
+
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -152,7 +154,7 @@ h1, h2, h3, .nav-logo {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    opacity: 0; /* Ocultas por defecto */
+    opacity: 0; 
 }
 
 .carousel:hover .carousel-btn {
@@ -165,6 +167,7 @@ h1, h2, h3, .nav-logo {
 
 .prev { left: 15px; }
 .next { right: 15px; }
+
 section {
     position: relative;
     padding: 5rem 10%;
@@ -174,7 +177,6 @@ section {
     margin-top: 120px; 
     width: 100%;
 }
-
 
 .filiales-title {
     color: #ffd700; 
@@ -190,10 +192,9 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px; /
-    flex-wrap: wrap;
+    gap: 40px;
+    flex-wrap: wrap; /* Añadido para responsividad */
 }
-
 
 .filial-item-box {
     flex: 0 1 110px; 
@@ -207,10 +208,10 @@ section {
     transition: all 0.3s ease;
 }
 
-
 .filial-item-box:hover img {
-    transform: scale(1.08); /* Pequeño zoom */
+    transform: scale(1.08); 
 }
+
 /* --- SECCIÓN HERO --- */
 .hero-section {
     height: 930px;
@@ -221,7 +222,7 @@ section {
 }
 
 .hero-top-text {
-    color: #e6a700; /* Dorado para el texto pequeño superior */
+    color: #e6a700; 
     font-size: 1rem;
     margin-bottom: 1rem;
 }
@@ -257,13 +258,17 @@ section {
 /* --- SECCIÓN NOSOTROS / INFRA --- */
 .container-flex {
     display: flex;
-    gap: 4rem;
-    align-items: center;
+    gap: 40px; 
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .image-placeholder {
     width: 100%;
-    min-width: 450px;
+    min-width: 100%; /* Ajustado para responsividad */
     height: 350px;
     border: 3px solid var(--red);
     border-radius: var(--border-radius);
@@ -272,32 +277,19 @@ section {
     justify-content: center;
     background: #221a1a;
 }
-/* El contenedor principal */
-.container-flex {
-    display: flex;
-    gap: 40px; 
-    align-items: flex-start;
-    justify-content: center;
-    width: 100%;
-    max-width: 1200px; /* Ajusta según el ancho de tu web */
-    margin: 0 auto;
-}
 
-/* Columna de Medios (Foto + Video) */
 .about-media {
-    flex: 0 0 55%; /* No se encoge, no crece, se queda en 55% del ancho */
+    flex: 0 0 55%; 
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Columna de Texto */
 .about-text {
-    flex: 0 0 40%; /* Se queda fija en el 40% del ancho */
-    min-width: 300px; /* Evita que se haga un tallarín */
+    flex: 0 0 40%; 
+    min-width: 300px; 
 }
 
-/* El envoltorio del video */
 .video-wrapper-nosotros {
     width: 100%;
     border: 2px solid #d32f2f;
@@ -307,27 +299,13 @@ section {
     background: #000;
 }
 
-/* EL VIDEO: Aquí está la clave para que no se deforme */
 .video-wrapper-nosotros video {
     width: 100% !important;
     height: auto !important;
-    aspect-ratio: 16 / 9; /* Reserva el espacio exacto */
+    aspect-ratio: 16 / 9; 
     display: block;
     object-fit: cover;
 }
-
-/* Ajuste para que en celulares no se vea mal */
-@media (max-width: 768px) {
-    .container-flex {
-        flex-direction: column;
-    }
-    .about-media, .about-text {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
-
-
 
 .red-line {
     width: 60px;
@@ -338,14 +316,9 @@ section {
 
 .about-tags {
     display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-/* Contenedor de las etiquetas de valores */
-.about-tags {
-    display: flex;
     gap: 15px;
     margin-top: 25px;
+    flex-wrap: wrap; /* Añadido para móviles */
 }
 
 .about-tags span {
@@ -355,13 +328,13 @@ section {
     font-weight: bold;
     font-family: 'Barlow Condensed', sans-serif;
     letter-spacing: 1px;
+    border-radius: 5px;
 }
 
-/* Sección de Filiales (Ahora debajo de los tags) */
 .filiales-container {
-    margin-top: 40px; /* Espacio extra para separar de los valores */
+    margin-top: 40px; 
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil divisoria */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
 }
 
 .filiales-title {
@@ -376,6 +349,7 @@ section {
     display: flex;
     gap: 80px;
     align-items: center;
+    flex-wrap: wrap; /* Añadido para responsividad */
 }
 
 .filial-item {
@@ -389,15 +363,6 @@ section {
     width: 65px;
     height: 65px;
     object-fit: contain;
-}
-
-
-.about-tags span {
-    border: 1px solid var(--red);
-    padding: 0.4rem 1rem;
-    border-radius: 5px;
-    color: var(--red);
-    font-weight: bold;
 }
 
 /* --- GRIDS (Entrenadores y Programas) --- */
@@ -415,12 +380,6 @@ section {
     border: 1px solid #332b2b;
 }
 
-.coach-img-placeholder {
-    height: 250px;
-    background: #2a2222;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-}
 .coach-img-container {
     width: 100%;
     height: 350px; 
@@ -432,7 +391,7 @@ section {
 .coach-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Esto evita que la foto se estire */
+    object-fit: cover; 
     object-position: top;
 }
 
@@ -460,12 +419,12 @@ th { background-color: var(--red); color: white; }
 
 /* --- FORMULARIO MEJORADO --- */
 .main-form {
-    background: #1a1515; /* var(--bg-card) */
+    background: #1a1515; 
     padding: 48px;
     border-radius: 12px;
     max-width: 900px;
     margin: 0 auto;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4); /* Sombra para darle profundidad */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4); 
 }
 
 .form-row {
@@ -482,18 +441,16 @@ input, select {
     color: #ffffff;
     border-radius: 5px;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 18px; /* Texto más legible */
+    font-size: 18px; 
     transition: all 0.3s ease;
 }
 
-/* Efecto visual cuando el usuario escribe en los campos */
 input:focus, select:focus {
     outline: none;
-    border-color: #d32f2f; /* var(--red) */
+    border-color: #d32f2f; 
     box-shadow: 0px 0px 8px rgba(211, 47, 47, 0.4);
 }
 
-/* Opciones del select en modo oscuro */
 select option {
     background: #1a1515;
     color: #ffffff;
@@ -502,7 +459,7 @@ select option {
 .btn-submit {
     width: 100%;
     padding: 20px;
-    background: #d32f2f; /* var(--red) */
+    background: #d32f2f; 
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -516,38 +473,11 @@ select option {
 }
 
 .btn-submit:hover {
-    background: #b71c1c; /* var(--red-hover) */
+    background: #b71c1c; 
 }
 
 .btn-submit:active {
-    transform: scale(0.98); /* Pequeño efecto de clic */
-}
-
-.form-row {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-input, select {
-    flex: 1;
-    padding: 1rem;
-    background: #2a2222;
-    border: 1px solid #443a3a;
-    color: white;
-    border-radius: 5px;
-}
-
-.btn-submit {
-    width: 100%;
-    padding: 1.2rem;
-    background: var(--red);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 1.2rem;
+    transform: scale(0.98); 
 }
 
 /* --- FOOTER MEJORADO --- */
@@ -564,7 +494,6 @@ footer {
     margin-bottom: 40px;
 }
 
-/* Marca y Sello */
 .footer-brand {
     display: flex;
     align-items: center;
@@ -588,7 +517,6 @@ footer {
     color: #d32f2f;
 }
 
-/* Información de Contacto e Iconos */
 .footer-contact-info p {
     font-size: 18px;
     color: #b0b0b0;
@@ -622,7 +550,6 @@ footer {
     fill: none;
 }
 
-/* Efecto Hover en los iconos */
 .social-icon:hover {
     background: #d32f2f;
     border-color: #d32f2f;
@@ -637,30 +564,28 @@ footer {
     color: #b0b0b0;
 }
 
-/* --- CONFIGURACIÓN DE UBICACIÓN FIJA (LAPTOP) --- */
-
+/* --- CONFIGURACIÓN DE UBICACIÓN --- */
 .location-container {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     gap: 30px;
     margin-top: 2rem;
-    width: 100%; /* Se mantiene al ancho del contenedor padre */
+    width: 100%; 
 }
 
-/* Columna de información a la izquierda */
 .location-cards {
-    width: 450px; /* Ancho fijo para el texto */
+    width: 450px; 
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
 .loc-card {
-    background: #1a1515; /* Color oscuro de fondo */
+    background: #1a1515; 
     padding: 20px;
     border-radius: 8px;
-    border-left: 5px solid #d32f2f; /* Detalle en rojo */
+    border-left: 5px solid #d32f2f; 
 }
 
 .loc-card h3 {
@@ -691,3 +616,132 @@ footer {
     border: 0;
 }
 
+/* =========================================
+   DISEÑO RESPONSIVO (MEDIA QUERIES)
+   ========================================= */
+
+/* Pantallas medianas (Tablets, max 992px) */
+@media (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 4.5rem;
+    }
+    .tables-grid {
+        grid-template-columns: 1fr; /* Una columna en lugar de dos */
+    }
+    .location-container {
+        flex-direction: column;
+    }
+    .location-cards {
+        width: 100%; /* El texto del mapa ocupa el 100% en tablet */
+    }
+    .map-wrap {
+        height: 350px;
+    }
+}
+
+/* Pantallas pequeñas (Móviles grandes y medianos, max 768px) */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 1rem 5%;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Hero */
+    .hero-section {
+        height: auto;
+        min-height: 600px;
+        padding: 4rem 5%;
+        text-align: center;
+    }
+    .hero-section h1 {
+        font-size: 3.5rem;
+    }
+    .hero-cta {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Padding general de las secciones */
+    section {
+        padding: 3rem 5%;
+    }
+
+    /* Sección Nosotros */
+    .container-flex {
+        flex-direction: column;
+    }
+    .about-media, .about-text {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .red-line {
+        margin: 1rem auto; /* Centrar línea roja si decides centrar texto */
+    }
+
+    /* Filiales */
+    .filiales-logos {
+        gap: 30px;
+        justify-content: center;
+    }
+
+    /* Formulario */
+    .main-form {
+        padding: 24px;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    /* Tablas adaptables (hace que hagan scroll horizontal en celular) */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Footer */
+    .footer-top {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .footer-brand {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .footer-contact-info p {
+        text-align: center;
+    }
+    .footer-socials {
+        justify-content: center;
+    }
+}
+
+/* Pantallas muy pequeñas (Teléfonos en vertical, max 480px) */
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+    .carousel-item {
+        height: 250px;
+    }
+    .coach-img-container {
+        height: 300px;
+    }
+    .footer-logo-text {
+        font-size: 28px;
+    }
+}
